@@ -1,0 +1,13 @@
+{
+  "name": "hugo-oct2",
+  "version": false,
+  "ambientDependencies": {
+    "gulp": "registry:dt/gulp#3.8.0+20160316155526",
+    "gulp-debug": "registry:dt/gulp-debug#2.0.1+20160316155526",
+    "gulp-sass": "registry:dt/gulp-sass#0.0.0+20160316155526",
+    "gulp-sourcemaps": "registry:dt/gulp-sourcemaps#0.0.0+20160316155526",
+    "node": "registry:dt/node#4.0.0+20160319033040",
+    "orchestrator": "registry:dt/orchestrator#0.0.0+20160316155526",
+    "q": "registry:dt/q#0.0.0+20160317120654"
+  }
+}

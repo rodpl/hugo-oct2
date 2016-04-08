@@ -1,0 +1,31 @@
+{
+  "name": "hugo-oct2",
+  "version": "0.0.1",
+  "description": "Hugo theme based on octopress theme 'Oct2'.",
+  "main": "gulpfile.ts",
+  "author": "Daniel Dabrowski",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rodpl/hugo-oct2.git"
+  },
+  "devDependencies": {
+    "gulp": "~3.9.0",
+    "gulp-compass": "^2.1.0",
+    "gulp-debug": "~2.1.2",
+    "gulp-sass": "~2.2.0",
+    "gulp-sourcemaps": "~1.5.2",
+    "gulp-tslint": "~4.3.3",
+    "gulp-typescript": "~2.12.1",
+    "gulp-watch": "~4.3.5",
+    "gulpclass": "^0.1.0",
+    "ts-node": "^0.7.0",
+    "tslint": "^3.6.0",
+    "typescript": "^1.8.9",
+    "typings": "~0.7.9"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "noEmit": false,
+    "sourceMap": true
+  },
+  "compileOnSave": true,
+  "files": [
+      "gulpfile.ts",
+      "gulpfile.config.ts",
+      "typings/main.d.ts",
+      "typings/gulp-compass/index.d.ts"
+  ]
+}

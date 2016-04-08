@@ -1,0 +1,51 @@
+
+<aside class="sidebar thirds">
+  <section id="titles" class="first odd">
+    {{ with .Site.Params.logo }}<a href="{{ .Site.BaseURL }}" title="{{ .Site.Title }}"><img id="logo" src="{{ .Site.BaseURL }}{{ . }}" /></a>{{ end }}
+    <h1 id="site_title"><a href="{{ .Site.BaseURL }}" title="{{ .Site.Title }}">{{ .Site.Title }}</a></h1>
+    {{ with .Site.Params.subtitle }}<h3 id="site_subtitle">{{ . }}</h3>{{ end }}
+  </section>
+
+  <section id="menu" class="even">
+    <ul>
+      <li><i class="fa fa-home fa-lg"></i><a href="{{ "/" | absURL }}">Home</a></li>
+      <li><i class="fa fa-calendar fa-lg"></i><a href="/blog/archives/">Archives</a></li>
+      <li><i class="fa fa-user fa-lg"></i><a href="/about/">About</a></li>
+      <li><i class="fa fa-rss fa-lg"></i><a href="{{ .RSSLink }}" type="application/rss+xml" target="_blank">Feed</a></li>
+    </ul>
+  </section>
+
+  <section id="social" class="odd">
+    {{ with .Site.Params.facebook_user }}<a target="_blank" href="http://www.facebook.com/{{ . }}" title="{{ . }}"><i class="fa fa-facebook fa-2x"></i></a>{{ end }}
+    {{ with .Site.Params.twitter_user }}<a target="_blank" href="http://twitter.com/{{ . }}" title="{{ . }}"><i class="fa fa-twitter fa-2x"></i></a>{{ end }}
+    {{ with .Site.Params.googleplus_user }}<a target="_blank" href="http://plus.google.com/u/0/{{ . }}" title="g+#{{ . }}"><i class="fa fa-google-plus fa-2x"></i></a>{{ end }}
+    {{ with .Site.Params.linkedin_user }}<a target="_blank" href="http://www.linkedin.com/in/{{ . }}" title="{{ . }}"><i class="fa fa-linkedin fa-2x"></i></a>{{ end }}
+    {{ with .Site.Params.github_user }}<a target="_blank" href="http://github.com/{{ . }}" title="{{ . }}"><i class="fa fa-github fa-2x"></i></a>{{ end }}
+    {{ with .Site.Params.bitbucket_user }}<a target="_blank" href="http://bitbucket.org/{{ . }}" title="{{ . }}"><i class="fa fa-bitbucket fa-2x"></i></a>{{ end }}
+    {{ with .Site.Params.stackoverflow_user }}<a target="_blank" href="http://stackoverflow.com/users/{{ . }}" title="{{ . }}"><i class="fa fa-stack-overflow fa-2x"></i></a>{{ end }}
+    {{ with .Site.Params.pinboard_user }}<a target="_blank" href="http://pinboard.in/u:{{ . }}" title="{{ . }}"><i class="fa fa-thumb-tack fa-2x"></i></a>{{ end }}
+    {{ with .Site.Params.youtube_user }}<a target="_blank" href="https://www.youtube.com/channel/{{ . }}" title="{{ . }}"><i class="fa fa-youtube fa-2x"></i></a>{{ end }}
+    {{ with .Site.Params.keybase_user }}<a target="_blank" href="{{ . }}" title="{{ . }}"><i class="fa fa-key fa-2x"></i></a>{{ end }} <!-- added keybase -->
+    {{ with .Site.Params.delicious_user }}<a target="_blank" href="https://delicious.com/{{ . }}" title="delicious#{{ . }}"><i class="fa fa-bookmark fa-2x"></i></a>{{ end }}
+    {{ with .Site.Params.disqus_user }}<a target="_blank" href="https://disqus.com/{{ . }}" title="disqus#{{ . }}"><i class="fa fa-comment fa-2x"></i></a>{{ end }}
+  </section>
+
+  <!-- add recent posts - limit is .Site.Params.SidebarRecentLimit - example copied from https://gohugo.io/templates/go-templates/ -->
+  <section class="even">
+    <h1>Recent Posts</h1>
+
+    <!-- check if the number of recent posts is set in config file, otherwise use 5 -->
+    <ul id="recent_posts">
+      {{ $numberofrecentposts := 5 }}
+      {{ if isset .Site.Params "SidebarRecentLimit" }}
+        {{ $numberofrecentposts := .Site.Params.SidebarRecentLimit }}
+      {{ end }}
+      {{range first $numberofrecentposts .Site.Pages }}
+      <li class="post">
+        <a href="{{.RelPermalink}}">{{.Title}}</a>
+      </li>
+      {{ end }}
+    </ul>
+  </section>
+
+</aside>

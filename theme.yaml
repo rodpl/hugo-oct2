@@ -1,0 +1,22 @@
+name: Hugo-Oct2
+description: Oct2 theme for Hugo
+license: MIT
+licenselink: http://opensource.org/licenses/MIT
+homepage: https://github.com/rodpl/hugo-oct2
+tags:
+  - otcopress
+  - blog
+  - personal
+features:
+  - distraction-free
+  - black-and-white
+
+author:
+  name: Daniel Dabrowski
+  homepage: http://rod.42n.pl
+
+original:
+  author: Biju Punalor
+  name: oct2
+  homepage: http://bijumon.github.io/oct2/
+  repo: https://github.com/bijumon/oct2.git

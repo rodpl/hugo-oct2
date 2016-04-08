@@ -22,3 +22,7 @@ _testmain.go
 *.exe
 *.test
 *.prof
+
+typings/
+node_modules/
+.sass-cache/

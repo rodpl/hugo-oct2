@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ .Title }}</title>
+
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="author" content="{{ .Site.Params.author }}">
+  <meta name="description" content="{{ if ne .Description "" }}{{ .Description }}{{ else }}{{ .Site.Params.defaultDescription }}{{ end }}">
+  <meta name="keywords" content="{{ range $index, $element := .Keywords }}{{ if gt $index 0 }},{{ end }}{{ . }}{{ else }}{{ .Site.Params.defaultKeywords }}{{ end }}">
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="canonical" href="{{ .Permalink }}">
+
+  <!-- Icons -->
+  <link href="{{ "/favicon.png" | absURL }}" rel="icon">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ "/css/screen.css" | absURL }}">
+
+  <!-- if you want your own highlight.css -->
+  <!-- 
+  {{ if isset .Site.Params "highlight" }}<link rel="stylesheet" href="{{ "/css/highlight/" | absURL }}{{ .Site.Params.highlight }}.css">{{ end }}
+  -->
+
+  <!-- RSS -->
+  {{ $siteTitle := .Site.Title }}
+  {{ $authorName := .Site.Author.name }}
+  
+  <!--
+  {{ with .RSSLink }}<link href="{{ . }}" rel="alternate" type="application/rss+xml" title="{{ $siteTitle }} &middot; {{ $authorName }}" />{{ end }}
+  -->
+
+  {{ with .RSSLink }}<link href="{{ . }}" rel="alternate" type="application/rss+xml" title="{{ $siteTitle }}" />{{ end }}
+
+  {{ .Hugo.Generator }}
+
+  {{ partial "custom/head.html" . }}
+
+  <!-- Google Analytics -->
+  {{ template "_internal/google_analytics.html" . }}
+  <style>html{background: url({{ "/img/background.png" | absURL }}) no-repeat center center fixed;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;}</style>
+</head>
+<body {{ with .Params.body_id }}id="{{ . }}"{{ end }} {{ if eq .Site.Params.sidebar false }} class="no-sidebar" {{ else if or (eq .Params.sidebar "collapse") (eq .Site.Params.sidebar "collapse") }} class="collapse-sidebar sidebar-footer" {{end}}>
+
+  <!-- top header for octopress -->
+  <header role="banner">{{ partial "octo-header.html" . }}</header>
+  <div id="main">
+    <div id="content">
